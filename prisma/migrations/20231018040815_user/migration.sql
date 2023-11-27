@@ -1,4 +1,0 @@
--- AlterTable
-ALTER TABLE "userModel" ALTER COLUMN "requests" DROP NOT NULL,
-ALTER COLUMN "likes" DROP NOT NULL,
-ALTER COLUMN "friends" DROP NOT NULL;

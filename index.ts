@@ -5,7 +5,7 @@ const port : number = 1234;
 
 const app : Application = express()
 
-appConfig(app)
+appConfig(app);
 
 
 const server = app.listen( port , () => {

@@ -6,9 +6,10 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "cockroachdb"
   url      = env("DATABASE_URL")
 }
+
 
 model userModel {
   id String @id @default(uuid())
@@ -18,7 +19,8 @@ model userModel {
   location String
 
   accepted Boolean @default(false)
-  requests Json?
-  likes Json?
-  friends Json?
+  requests Json
+  likes Json
+  friends Json
+  avatar String
 }
