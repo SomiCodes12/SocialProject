@@ -26,10 +26,11 @@ export const createUser = async (req: Request, res: Response) => {
       message: "Creted User Successfuly",
       data: user,
     });
-  } catch (error) {
+  } catch (error : any) {
     return res.status(400).json({
       message: "Error Creating User",
       data: error,
+      error 
     });
   }
 };

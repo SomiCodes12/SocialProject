@@ -37,6 +37,7 @@ const createUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         return res.status(400).json({
             message: "Error Creating User",
             data: error,
+            error
         });
     }
 });
