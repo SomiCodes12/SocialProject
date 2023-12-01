@@ -35,9 +35,8 @@ const createUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     }
     catch (error) {
         return res.status(400).json({
-            message: "Error Creating User",
-            data: error,
-            error
+            message: `Error Creating User: ${error.message}`,
+            info: error,
         });
     }
 });
@@ -52,8 +51,8 @@ const viewUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     }
     catch (error) {
         return res.status(400).json({
-            message: "Error Viewing User",
-            data: error,
+            message: `Error Viewing User: ${error.message}`,
+            info: error,
         });
     }
 });
@@ -101,8 +100,8 @@ const likeUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     }
     catch (error) {
         return res.status(400).json({
-            message: "Error Liking User",
-            data: error,
+            message: `Error Liking User: ${error.message}`,
+            info: error,
         });
     }
 });
@@ -142,8 +141,8 @@ const unLikeUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     }
     catch (error) {
         return res.status(400).json({
-            message: "Error unLiking User",
-            data: error,
+            message: `Error unLiking User: ${error.message}`,
+            info: error,
         });
     }
 });
@@ -176,8 +175,8 @@ const sendFriendRequest = (req, res) => __awaiter(void 0, void 0, void 0, functi
     }
     catch (error) {
         return res.status(400).json({
-            message: "Error Sending Request",
-            data: error,
+            message: `Error Sending Request: ${error.message}`,
+            dinfoata: error,
         });
     }
 });
@@ -197,8 +196,8 @@ const deleteUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     }
     catch (error) {
         return res.status(400).json({
-            message: "Error Deleting User",
-            data: error.message,
+            message: `Error Deleting User: ${error.message}`,
+            info: error.message,
         });
     }
 });
@@ -239,9 +238,8 @@ const acceptRequest = (req, res) => __awaiter(void 0, void 0, void 0, function* 
     }
     catch (error) {
         return res.status(400).json({
-            message: "Error Accepting Request",
-            data: error,
-            error,
+            message: `Error Accepting Request: ${error.message}`,
+            info: error,
         });
     }
 });

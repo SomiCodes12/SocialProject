@@ -28,9 +28,8 @@ export const createUser = async (req: Request, res: Response) => {
     });
   } catch (error : any) {
     return res.status(400).json({
-      message: "Error Creating User",
-      data: error,
-      error 
+      message: `Error Creating User: ${error.message}`,
+      info: error,
     });
   }
 };
@@ -43,10 +42,10 @@ export const viewUser = async (req: Request, res: Response) => {
       message: "Viewed User Successfuly",
       data: user,
     });
-  } catch (error) {
+  } catch (error:any) {
     return res.status(400).json({
-      message: "Error Viewing User",
-      data: error,
+      message: `Error Viewing User: ${error.message}`,
+      info: error,
     });
   }
 };
@@ -92,10 +91,10 @@ export const likeUser = async (req: Request, res: Response) => {
         message: "User Not Found",
       });
     }
-  } catch (error) {
+  } catch (error:any) {
     return res.status(400).json({
-      message: "Error Liking User",
-      data: error,
+      message: `Error Liking User: ${error.message}`,
+      info: error,
     });
   }
 };
@@ -134,10 +133,10 @@ export const unLikeUser = async (req: Request, res: Response) => {
         message: "Users Not Found",
       });
     }
-  } catch (error) {
+  } catch (error:any) {
     return res.status(400).json({
-      message: "Error unLiking User",
-      data: error,
+      message: `Error unLiking User: ${error.message}`,
+      info: error,
     });
   }
 };
@@ -171,10 +170,10 @@ export const sendFriendRequest = async (req: Request, res: Response) => {
       message: "Sent Request Successfuly",
       data: updated,
     });
-  } catch (error) {
+  } catch (error:any) {
     return res.status(400).json({
-      message: "Error Sending Request",
-      data: error,
+      message: `Error Sending Request: ${error.message}`,
+      dinfoata: error,
     });
   }
 };
@@ -195,8 +194,8 @@ export const deleteUser = async (req: Request, res: Response) => {
     });
   } catch (error : any) {
     return res.status(400).json({
-      message: "Error Deleting User",
-      data: error.message,
+      message: `Error Deleting User: ${error.message}`,
+      info: error.message,
     });
   }
 };
@@ -240,9 +239,8 @@ export const acceptRequest = async (req: Request, res: Response) => {
     }
   } catch (error: any) {
     return res.status(400).json({
-      message: "Error Accepting Request",
-      data: error,
-      error,
+      message: `Error Accepting Request: ${error.message}`,
+      info: error,
     });
   }
 };
