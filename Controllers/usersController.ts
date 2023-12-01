@@ -37,7 +37,7 @@ export const createUser = async (req: Request, res: Response) => {
 
 export const viewUser = async (req: Request, res: Response) => {
   try {
-    const user = await prisma.userModel.findMany();
+    const user = await prisma.userModel.findMany({});
 
     return res.status(200).json({
       message: "Viewed User Successfuly",

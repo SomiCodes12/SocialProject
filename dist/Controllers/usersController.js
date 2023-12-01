@@ -44,7 +44,7 @@ const createUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
 exports.createUser = createUser;
 const viewUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const user = yield prisma.userModel.findMany();
+        const user = yield prisma.userModel.findMany({});
         return res.status(200).json({
             message: "Viewed User Successfuly",
             data: user,

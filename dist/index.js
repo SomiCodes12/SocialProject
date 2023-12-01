@@ -5,9 +5,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const mainApp_1 = require("./mainApp");
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
 const port = 1234;
 const app = (0, express_1.default)();
 (0, mainApp_1.appConfig)(app);
-const server = app.listen(port, () => {
+const server = app.listen(process.env.port || port, () => {
     console.log("Server Live");
 });
